@@ -2,8 +2,8 @@ const router = require("express").Router();
 const authorize = require("../middleware/authorize");
 const pool = require("../db");
 
-// @route   GET dashboard
-// @desc    Get dashboard if verified
+// @route   GET profile
+// @desc    Get profile if verified
 // @access  Private
 router.get("/", authorize, async (req, res) => {
   try {

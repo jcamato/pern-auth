@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 // components
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Dashboard from "./components/Dashboard";
+import Profile from "./components/Profile";
 
 toast.configure();
 
@@ -54,7 +54,7 @@ function App() {
                 !isAuthenticated ? (
                   <Login {...props} setAuth={setAuth} />
                 ) : (
-                  <Redirect to="/dashboard" />
+                  <Redirect to="/profile" />
                 )
               }
             />
@@ -65,16 +65,16 @@ function App() {
                 !isAuthenticated ? (
                   <Register {...props} setAuth={setAuth} />
                 ) : (
-                  <Redirect to="/dashboard" />
+                  <Redirect to="/profile" />
                 )
               }
             />
             <Route
               exact
-              path="/dashboard"
+              path="/profile"
               render={(props) =>
                 isAuthenticated ? (
-                  <Dashboard {...props} setAuth={setAuth} />
+                  <Profile {...props} setAuth={setAuth} />
                 ) : (
                   <Redirect to="/login" />
                 )

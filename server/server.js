@@ -9,7 +9,7 @@ app.use(express.json());
 
 //routes
 app.use("/auth", require("./routes/auth"));
-app.use("/dashboard", require("./routes/dashboard"));
+app.use("/profile", require("./routes/profile"));
 
 app.listen(process.env.PORT, () =>
   console.log(
